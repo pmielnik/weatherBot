@@ -1,4 +1,6 @@
 # -*- coding: UTF-8 -*-
+# this is the AWS Lambda version of the script, so that it can be run
+# automatically to send out messages every morning
 import os
 import urllib
 import json
@@ -50,7 +52,7 @@ def getAlertText( alertType ):
     else :
         return "Unrecognized alert type."
 
-if __name__ == '__main__':
+def main(json_input, context):
 
     fbClient    = Client(FB_USER, FB_PASSWORD)
     fbUsers     = fbClient.fetchAllUsers()
