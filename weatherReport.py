@@ -8,22 +8,6 @@ import sys
 from fbchat import Client
 from fbchat.models import Message
 
-# Constants
-
-# TODO: may not need this lol
-# UTF-16 emoji values 
-RAIN_EMOJI         = u"\U0001F327"
-UMBRELLA_EMOJI     = u"\u2614"
-SNOW_EMOJI         = u"\u2744"
-SNOW_CLOUD_EMOJI   = u"\U0001F328"
-THEROMOMETER_EMOJI = u"\U0001F321"
-SKATE_EMOJI        = u"\u26F8"
-TORNADO_EMOJI      = u"\U0001F32A"
-WIND_GUST_EMOJI    = u"\U0001F32C"
-FWOOSH_EMOJI       = u"\U0001F4A8"
-THUNDERSTORM_EMOJI = u"\u26C8"
-LIGHTNING_EMOJI    = u"\u26A1"
-
 # AccuWeather API setup
 ACCUWEATHER_KEY          = os.environ['ACCUWEATHER_KEY']
 LOCATION_KEY             = "49524_PC"   # Waterloo, ON, Canada
