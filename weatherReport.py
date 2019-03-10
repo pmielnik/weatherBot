@@ -61,14 +61,15 @@ if __name__ == '__main__':
     dailyMaximum = weatherForecast["DailyForecasts"][0]["Temperature"]["Maximum"]["Value"]
     feelsLikeMinimum = weatherForecast["DailyForecasts"][0]["RealFeelTemperature"]["Minimum"]["Value"]
     feelsLikeMaximum = weatherForecast["DailyForecasts"][0]["RealFeelTemperature"]["Maximum"]["Value"]
-    weatherSummary = weatherForecast["DailyForecasts"][0]["Day"]["IconPhrase"].lower()
+    weatherSummary = weatherForecast["DailyForecasts"][0]["Day"]["LongPhrase"].lower()
 
     alerts = []
 
-    for alert in weatherAlerts[0]["Alarms"] :
-        alertType = alert["AlarmType"]
-        alertText = getAlertText( alertType )
-        alerts.append(alertText)
+    if len(weatherAlerts) > 0:
+        for alert in weatherAlerts[0]["Alarms"] :
+            alertType = alert["AlarmType"]
+            alertText = getAlertText( alertType )
+            alerts.append(alertText)
 
     forecastMessage = Message(
                         text="Good morning!\nToday's weather is " + weatherSummary + 
